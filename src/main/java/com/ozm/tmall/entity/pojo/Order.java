@@ -1,7 +1,10 @@
 package com.ozm.tmall.entity.pojo;
 
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.ozm.tmall.entity.service.OrderService;
 
 import javax.persistence.*;
@@ -11,6 +14,7 @@ import java.util.List;
 @Entity
 @Table(name = "order_")
 @JsonIgnoreProperties({ "handler","hibernateLazyInitializer" })
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

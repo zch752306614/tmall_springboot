@@ -19,11 +19,11 @@ public class Application {
     //检查Redis是否启动，即检查6379 redis服务器的端口是否启动
     //如果未启动，那么就会退出 springboot。
     //静态代码块 随着类的加载而执行，而且只执行一次
-    static {
+    /*static {
         PortUtil.checkPort(6379,"Redis 服务端",true);
         PortUtil.checkPort(9300,"ElasticSearch 服务端",true);
         PortUtil.checkPort(5601,"Kibana 工具", true);
-    }
+    }*/
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class,args);
