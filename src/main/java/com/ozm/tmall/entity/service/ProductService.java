@@ -139,7 +139,7 @@ public class ProductService {
     public List<Product> search(String keyword, int start, int size) {
         /* ------------------       es搜索         ------------------      */
         //初始化搜索结果到es上
-        initDatabase2ES(start,size);
+        /*initDatabase2ES(start,size);
         //使用FunctionScoreQueryBuilder优化es搜索结果
         FunctionScoreQueryBuilder functionScoreQueryBuilder = QueryBuilders.functionScoreQuery()
                 .add(QueryBuilders.matchPhraseQuery("name", keyword),
@@ -153,16 +153,16 @@ public class ProductService {
                 .withPageable(pageable)
                 .withQuery(functionScoreQueryBuilder).build();
         Page<Product> page = productESDAO.search(searchQuery);
-        return page.getContent();
+        return page.getContent();*/
 
         /* ------------------       es搜索         ------------------      */
 
 
         /* ------------------       普通模糊搜索         ------------------      */
-        //Sort sort = new Sort(Sort.Direction.DESC, "id");
-        //Pageable pageable = new PageRequest(start, size, sort);
-        //List<Product> products =productDAO.findByNameLike("%"+keyword+"%",pageable);
-        //return products;
+        Sort sort = new Sort(Sort.Direction.DESC, "id");
+        Pageable pageable = new PageRequest(start, size, sort);
+        List<Product> products =productDAO.findByNameLike("%"+keyword+"%",pageable);
+        return products;
         /* ------------------       普通模糊搜索          ------------------      */
     }
 
