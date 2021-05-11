@@ -18,7 +18,7 @@ a {
 
 a:hover {
 	text-decoration: none;
-	color: #C40000;
+	color: #FA6142;
 }
 
 nav.top {
@@ -30,7 +30,7 @@ nav.top {
 }
 
 .redColor {
-	color: #C40000;
+	color: #fa6142;
 }
 
 .boldWord {
@@ -47,7 +47,7 @@ nav.top span, nav.top a {
 }
 
 nav.top a:hover {
-	color: #C40000;
+	color: #fa6142;
 }
 
 nav.top {
@@ -65,7 +65,7 @@ nav.top div.row div {
 }
 
 div.searchDiv {
-	background-color: #C40000;
+	background-color: #FA6142;
 	width: 400px;
 	margin: 50px auto;
 	padding: 1px;
@@ -84,7 +84,7 @@ div.searchDiv input {
 div.searchDiv button {
 	width: 110px;
 	border: 1px solid transparent;
-	background-color: #C40000;
+	background-color: #fa6142;
 	color: white;
 	font-size: 20px;
 	font-weight: bold;
@@ -107,7 +107,8 @@ div.carouselBackgroundDiv{
 }
 
 div.categoryWithCarousel div.headbar {
-	background-color: #DD2727;
+	/*background-color: #DD2727;*/
+	background-color: #fa6150;
 }
 
 div.carousel-of-product {
@@ -128,6 +129,11 @@ div.categoryWithCarousel div.categoryMenu {
 	left: 0;
 	top: 0;
 	z-index: 1;
+	height: 509px;
+	overflow: hidden;
+	overflow-y: scroll
+/*	wwcattle*/
+
 }
 
 div.categoryWithCarousel div.productsAsideCategorys {
@@ -180,7 +186,7 @@ div.categoryWithCarousel div.rightMenu a {
 
 div.categoryWithCarousel div.head {
 	width: 200px;
-	background-color: #C60A0A;
+	background-color: #fa6142;
 	height: 36px;
 	line-height: 36px;
 	font-size: 16px;
@@ -197,7 +203,7 @@ div.productsAsideCategorys a {
 }
 
 div.productsAsideCategorys a:hover {
-	color: #C40000;
+	color: #FA6142;
 	text-decoration: none;
 }
 
@@ -249,7 +255,12 @@ img.catear {
 img.logo {
 	position: absolute;
 	left: 0px;
-	top: 30px;
+	top: 40px;
+	width:150px;
+	margin-left: 90px;
+	margin-top: 46px;
+
+
 /* 	z-index:-1; */
 }
 
@@ -265,7 +276,7 @@ div.left-mark {
 	height: 20px;
 	vertical-align: top;
 	width: 5px;
-	background-color: #19C8A9;
+	background-color: #FA6142;
 }
 
 span.categoryTitle {
@@ -291,7 +302,7 @@ a.productItemDescLink {
 }
 
 div.productItem:hover {
-	border: 1px solid #C40000;
+	border: 1px solid #fa6142;
 }
 
 div.productItem span.productItemDesc {
@@ -303,7 +314,7 @@ div.productItem span.productItemDesc {
 
 div.productItem span.productPrice {
 	font-size: 16px;
-	color: #FF003A;
+	color: #FA6142;
 	display: block;
 	padding-left: 16px;
 	margin-top: -10px;
@@ -389,7 +400,7 @@ div.copyright {
 	border-top-style: solid;
 	border-top-width: 2px;
 	border-top-color: solid;
-	border-top-color: #C40000;
+	border-top-color: #fa6142;
 	margin-top:20px;
 
 
@@ -515,7 +526,7 @@ span.loginInputIcon span.glyphicon {
 
 button.redButton {
 	color: white;
-	background-color: #C40000;
+	background-color: #FA6142;
 	font-size: 14px;
 	font-weight: bold;
 }
@@ -544,7 +555,7 @@ table.categorySortBarTable td a {
 }
 
 table.categorySortBarTable td a:hover {
-	color: #C40000;
+	color: #fa6142;
 }
 
 table.categorySortBarTable td.grayColumn {
@@ -578,7 +589,7 @@ div.categoryProducts {
 
 div.productUnit {
 	width: 225px;
-	height: 338px;
+	height: 354px;
 	border: 3px solid #fff;
 	background-color: white;
 	margin: 12px 5px;
@@ -588,7 +599,7 @@ div.productUnit {
 
 div.productUnit:hover {
 	width: 225px;
-	border: 3px solid #C40000;
+	border: 3px solid #fa6142;
 	padding: 0px;
 }
 
@@ -604,7 +615,7 @@ div.productUnitFrame{
 	border:1px solid #eee;
 }
 div.productUnitFrame:hover{
-	border:1px solid #C40000;
+	border:1px solid #fa6142;
 }
 span.productPrice{
     margin-top: 2%!important;
@@ -613,7 +624,7 @@ span.productPrice{
 
 div.productUnit span.productPrice {
 	font-size: 20px;
-	color: #CC0000;
+	color: #fa6150;
 	display: block;
 	padding-left: 4px;
 }
@@ -632,11 +643,26 @@ div.productUnit a.productLink {
 	color: #333333;
 	font: 0.8em;
 	display: block;
+	/*display: -webkit-box;*/
+
+}
+.contain{
+	overflow: hidden;
+	display: -webkit-box;
+	white-space: normal;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	background-color: #fff;
+	width: 210px;
+	height: 72px;
+	line-height: 24px;
+	margin: 10px 0;
+	text-overflow: ellipsis;
 }
 
 div.productUnit a.productLink:hover {
 	text-decoration: underline;
-	color: #C40000;
+	color: #fa6142;
 }
 
 div.productUnit a.tmallLink {
@@ -649,7 +675,7 @@ div.productUnit a.tmallLink {
 
 div.productUnit a.tmallLink:hover {
 	text-decoration: underline;
-	color: #C40000;
+	color: #fa6142;
 }
 
 div.productUnit div.productInfo {
@@ -692,12 +718,17 @@ div.productUnit div.productInfo {
 img.simpleLogo {
 	position: absolute;
 	left: 10px;
-	top: 50px;
-	width: 140px;
+	top: 40px;
+	width: 150px;
+	margin-left: 150px;
+}
+.logoImgs{
+	width:150px;
+	margin-left: 10px;
 }
 
 div.simpleSearchDiv {
-	background-color: #C40000;
+	background-color: #FA6142;
 	width: 320px;
 	margin: 10px 20px 40px;
 	padding: 1px;
@@ -716,7 +747,7 @@ div.simpleSearchDiv input {
 div.simpleSearchDiv button {
 	width: 70px;
 	border: 1px solid transparent;
-	background-color: #C40000;
+	background-color: #FA6142;
 	color: white;
 	font-size: 14px;
 	/* 	font-weight:bold; */
@@ -766,7 +797,7 @@ div.infoInimgAndInfo div.productTitle {
 }
 
 div.infoInimgAndInfo div.productSubTitle {
-	color: #DD2727;
+	color: #FA6161;
 	font-size: 12px;
 	/* 	font-weight:bold; */
 	margin: 0px 10px;
@@ -774,7 +805,7 @@ div.infoInimgAndInfo div.productSubTitle {
 
 div.infoInimgAndInfo div.juhuasuan {
 	/* 	height:40px; */
-	background-color: #2DA77A;
+	background-color: #FA6142;
 	color: white;
 	text-align: center;
 	line-height: 40px;
@@ -841,12 +872,12 @@ div.infoInimgAndInfo span.originalPrice {
 div.infoInimgAndInfo span.promotionPriceYuan {
 	font-family: Arial;
 	font-size: 18px;
-	color: #C40000;
+	color: #FA6142;
 	/*     vertical-align: top; */
 }
 
 div.infoInimgAndInfo span.promotionPrice {
-	color: #c40000;
+	color: #FA6142;
 	font-family: Arial;
 	font-size: 30px;
 	font-weight: bold;
@@ -984,7 +1015,7 @@ div.productParamterList span {
 a.selected {
 	border-left: 1px solid #cfbfb1;
 	border-right: 1px solid #cfbfb1;
-	color: #b10000;
+	color: #FA6161;
 	display: inline-block;
 	font-weight: bold;
 	line-height: 46px;
@@ -994,7 +1025,7 @@ a.selected {
 }
 
 a.selected:after {
-	border-color: #b00000 transparent transparent;
+	border-color: #FA6161 transparent transparent;
 	border-style: solid;
 	border-width: 5px;
 	content: "";
@@ -1008,7 +1039,7 @@ a.selected:after {
 }
 
 a.selected:before {
-	border-color: #b00000;
+	border-color: #FA6161;
 	border-style: solid;
 	border-width: 1px;
 	content: "";
@@ -1105,24 +1136,24 @@ div.buyDiv button {
 }
 
 button.buyButton {
-	border: 1px solid #C40000;
+	border: 1px solid #FA6142;
 	background-color: #FFEDED;
 	text-align: center;
 	line-height: 40px;
 	font-size: 16px;
 	/* 	font-weight:700; */
-	color: #C40000;
+	color: #FA6142;
 	font-family: arial;
 }
 
 button.addCartButton {
-	border: 1px solid #C40000;
-	background-color: #C40000;
+	border: 1px solid #fa6142
+	background-color: #fa6142;
 	text-align: center;
 	line-height: 40px;
 	font-size: 16px;
 	/* 	font-weight:700; */
-	color: white;
+	color: #e44b4b;
 	font-family: arial;
 }
 
@@ -1164,7 +1195,7 @@ table.addressTable td {
 }
 
 span.redStar {
-	color: red;
+	color: orangered;
 	font-size: 8px;
 }
 
@@ -1182,7 +1213,9 @@ table.addressTable td textarea {
 img.tmallbuy {
 	width: 15px;
 }
-
+img.pull-left{
+	width: 150px;
+}
 a.marketLink {
 	color: black;
 	font-size: 12px;
@@ -1269,7 +1302,7 @@ span.orderItemProductPrice, span.orderItemProductNumber {
 }
 
 span.orderItemUnitSum {
-	color: #CC0000;
+	color: #fa6150;
 	font-weight: bold;
 }
 
@@ -1344,7 +1377,7 @@ div.orderItemTotalSumDiv span {
 }
 
 span.orderItemTotalSumSpan {
-	color: #C40000 !important;
+	color: #FA6142 !important;
 	font-size: 22px;
 	font-weight: bold;
 	border-bottom: 1px dotted #F2F6FF;
@@ -1356,8 +1389,8 @@ div.submitOrderDiv {
 }
 
 button.submitOrderButton {
-	border: 1px solid #C40000;
-	background-color: #C40000;
+	border: 1px solid #FA6142;
+	background-color: #FA6142;
 	text-align: center;
 	line-height: 40px;
 	font-size: 14px;
@@ -1443,7 +1476,7 @@ div.payedAddressInfo li {
 }
 
 span.payedInfoPrice {
-	color: #B10000;
+	color: #FA6161;
 	font-weight: bold;
 	font-size: 14px;
 	font-family: arial;
@@ -1482,7 +1515,7 @@ div.cartDiv {
 }
 
 span.cartTitlePrice {
-	color: #C40000;
+	color: #FA6142;
 	font-size: 14px;
 	font-weight: bold;
 	margin-left: 5px;
@@ -1521,7 +1554,7 @@ a.cartProductLink {
 }
 
 a.cartProductLink:hover {
-	color: #C40000;
+	color: #FA6142;
 	text-decoration: underline;
 }
 
@@ -1556,14 +1589,14 @@ span.cartProductItemPromotionPrice {
 	font-family: Arial;
 	font-size: 14px;
 	font-weight: bold;
-	color: #C40000;
+	color: #FA6142;
 }
 
 span.cartProductItemSmallSumPrice {
 	font-family: Arial;
 	font-size: 14px;
 	font-weight: bold;
-	color: #C40000;
+	color: #FA6142;
 }
 
 div.cartProductChangeNumberDiv {
@@ -1602,13 +1635,13 @@ div.cartFoot {
 }
 
 span.cartSumNumber {
-	color: #C40000;
+	color: #FA6142;
 	font-weight: bold;
 	font-size: 16px;
 }
 
 span.cartSumPrice {
-	color: #C40000;
+	color: #FA6142;
 	font-weight: bold;
 	font-size: 20px;
 }
@@ -1631,7 +1664,7 @@ div.boughtDiv {
 }
 
 div.orderType div.selectedOrderType {
-	border-bottom: 2px solid #C40000;
+	border-bottom: 2px solid #FA6142;
 }
 
 div.orderType div {
@@ -1663,11 +1696,11 @@ div.orderType a {
 }
 
 div.orderType div.selectedOrderType a {
-	color: #C40000;
+	color: #FA6142;
 }
 
 div.orderType a:hover {
-	color: #C40000;
+	color: #FA6142;
 	text-decoration: none;
 }
 
@@ -1782,8 +1815,8 @@ button.orderListItemReview {
 }
 
 button.orderListItemReview:hover {
-	border-color: #C40000;
-	color: #C40000;
+	border-color: #FA6142;
+	color: #FA6142;
 }
 
 td.orderItemDeleteTD {
@@ -1893,7 +1926,7 @@ div.confirmPayOrderItemText {
 }
 
 span.confirmPayOrderItemSumPrice {
-	color: #C40000;
+	color: #FA6142;
 }
 
 table.confirmPayOrderDetailTable {
@@ -1933,7 +1966,7 @@ div.confirmPayButtonDiv {
 div.confirmPayWarning {
 	margin: 20px 80px;
 	font-size: 18px;
-	color: red;
+	color: orangered;
 	font-weight: bold;
 }
 
@@ -1943,7 +1976,7 @@ button.confirmPayButton:hover {
 
 button.confirmPayButton {
 	margin: 20px 80px;
-	width: 67px;
+	width: 87px;
 	height: 30px;
 	border: 1px solid #E67C00;
 	background-color: #F4A21D;
@@ -1991,13 +2024,13 @@ div.reviewProductInfoRightText {
 }
 
 span.reviewProductInfoTablePrice {
-	color: #C40000;
+	color: #FA6142;
 	font-size: 20px;
 	font-weight: bold;
 }
 
 span.reviewProductInfoTableSellNumber {
-	color: #C40000;
+	color: #FA6142;
 	font-size: 14px;
 	font-weight: bold;
 }
@@ -2048,7 +2081,7 @@ div.reviewStasticsLeft {
 }
 
 div.reviewStasticsLeftTop {
-	background-color: #C40000;
+	background-color: #FA6142;
 	height: 6px;
 }
 
@@ -2133,7 +2166,7 @@ div.makeReviewButtonDiv button {
 	width: 72px;
 	height: 26px;
 	border-radius: 2px;
-	background-color: #C40000;
+	background-color: #FA6142;
 	color: white;
 	border-width: 0px;
 	font-weight: bold;
@@ -2186,7 +2219,7 @@ table.registerTable button {
 	height: 36px;
 	border-radius: 2px;
 	color: white;
-	background-color: #C40000;
+	background-color: #FA6142;
 	border-width: 0px;
 }
 
@@ -2276,7 +2309,7 @@ span.reviewUserInfoAnonymous {
 }
 
 a.productLink {
-	height: 34px;
+	/*height: 34px;*/
 }
 
 img.carouselImage {

@@ -256,7 +256,8 @@ public class ForeRESTController {
         for(OrderItem orderItem:orderItemList){
             //如果在对应用户对应商品中找到相同的订单项，则对该订单项进行操作
             if (orderItem.getProduct().getId()==p.getId()){
-                orderItem.setNumber(orderItem.getNumber()+num);
+                //orderItem.setNumber(orderItem.getNumber()+num);
+                orderItem.setNumber(num);
                 //将对应的orderItem对象更新到数据库上
                 orderItemService.update(orderItem);
                 found = true;

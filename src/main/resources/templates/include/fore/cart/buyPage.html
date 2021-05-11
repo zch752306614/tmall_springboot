@@ -32,6 +32,12 @@
 
                     <!--购买按钮-->
                     submitOrder:function(){
+                        if(this.order.mobile.length==0||this.order.receiver.length==0||this.order.post.length==0||this.order.address.length==0){
+                            return window.alert("订单信息填写不完整，请检查！！！")
+                        }
+
+
+
                         var url =  "forecreateOrder";
                         axios.post(url,this.order).then(function(response) {
                             var result = response.data;
@@ -41,6 +47,27 @@
                             location.href="alipay?oid="+oid+"&total="+total;
                         });
                     }
+                },
+                watch:{
+                    "order.address"(newVal){
+                        if(newVal.length>30){
+                            this.order.address=""
+                            return alert("输入的地址字符必须少于30个字符!!请重新输入！")
+                        }
+                    },
+                    "order.mobile"(newVal){
+                        if(newVal.length>11){
+                            this.order.mobile=""
+                            return alert("输入的手机字符必须小于11个字符!!!请重新输入！")
+                        }
+                    },
+                    "order.receiver"(newVal){
+                        if(newVal.length>6){
+                            this.order.receiver=""
+                            return alert("输入的名字字符必须少于6个字符!!!请重新输入！")
+                        }
+                    },
+
                 }
             });
 
@@ -48,9 +75,9 @@
     </script>
     <div class="buyPageDiv">
         <div class="buyFlow">
-            <img class="pull-left" src="img/site/simpleLogo.png">
-            <img class="pull-right" src="img/site/buyflow.png">
-            <div style="clear:both"></div>
+<!--            <img class="pull-left" src="img/site/simpleLogo.png">-->
+<!--            <img class="pull-right" src="img/site/buyflow.png">-->
+<!--            <div style="clear:both"></div>-->
         </div>
         <div class="address">
             <div class="addressTip">输入收货地址</div>
@@ -60,7 +87,7 @@
                     <tr>
                         <td class="firstColumn">详细地址<span class="redStar">*</span></td>
 
-                        <td><textarea name="address" v-model="order.address" placeholder="建议您如实填写详细收货地址，例如接到名称，门牌好吗，楼层和房间号等信息"></textarea></td>
+                        <td><textarea name="address" v-model="order.address" placeholder="建议您如实填写详细收货地址，例如接到名称，门牌号码，楼层和房间号等信息"></textarea></td>
                     </tr>
                     <tr>
                         <td>邮政编码</td>
@@ -68,7 +95,7 @@
                     </tr>
                     <tr>
                         <td>收货人姓名<span class="redStar">*</span></td>
-                        <td><input  name="receiver"  v-model="order.receiver" placeholder="长度不超过25个字符" type="text"></td>
+                        <td><input  name="receiver"  v-model="order.receiver" placeholder="长度不超过6个字符" type="text"></td>
                     </tr>
                     <tr>
                         <td>手机号码 <span class="redStar">*</span></td>
