@@ -95,7 +95,7 @@ public class ProductImageController {
             ImageUtil.resizeImage(file, 56, 56, f_small);
             ImageUtil.resizeImage(file, 217, 190, f_middle);
         }
-
+        System.out.println(file);
         return bean;
 
     }
