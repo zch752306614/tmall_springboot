@@ -1,13 +1,13 @@
 <div class th:fragment="html">
     <a th:href="${application.contextPath}">
-        <img id="logo" src="img/site/logo.gif" class="logo">
+        <img id="logo" src="img/site/logo.png" class="logo">
     </a>
 
 
     <!--组件Search，搜索页在fore/search下-->
     <form action="search" method="get" >
         <div class="searchDiv">
-            <input name="keyword" type="text" placeholder="时尚男鞋  太阳镜 ">
+            <input name="keyword" type="text" placeholder="时尚女鞋  太阳镜 ">
             <button  type="submit" class="searchButton">搜索</button>
             <div class="searchBelow">
                 <!--使用application.categories_below_search 读出在拦截器上rquest.getServletContext().setAttribute("categories_below_search")的值-->

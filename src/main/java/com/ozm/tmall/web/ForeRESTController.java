@@ -65,8 +65,7 @@ public class ForeRESTController {
             //失败返回1
             return Result.fail(message);
         }else{
-            //成功返回0
-            //注册时候的时候，会通过随机方式创建盐
+            //成功返回0,注册时候的时候，会通过随机方式创建盐
             //并且加密算法采用 "md5", 除此之外还会进行 2次加密。
             //这个盐，如果丢失了，就无法验证密码是否正确了，所以会数据库里保存起来。
             String salt = new SecureRandomNumberGenerator().nextBytes().toString();//盐
@@ -158,6 +157,8 @@ public class ForeRESTController {
         }else{
             return Result.fail("未登录");
         }
+
+
 //        User user =(User)  session.getAttribute("user");
 //        if(null!=user)
 //            return Result.success();
@@ -256,7 +257,8 @@ public class ForeRESTController {
         for(OrderItem orderItem:orderItemList){
             //如果在对应用户对应商品中找到相同的订单项，则对该订单项进行操作
             if (orderItem.getProduct().getId()==p.getId()){
-                orderItem.setNumber(orderItem.getNumber()+num);
+                //orderItem.setNumber(orderItem.getNumber()+num);
+                orderItem.setNumber(num);
                 //将对应的orderItem对象更新到数据库上
                 orderItemService.update(orderItem);
                 found = true;

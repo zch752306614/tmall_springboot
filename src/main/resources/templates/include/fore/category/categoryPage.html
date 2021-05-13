@@ -12,7 +12,9 @@
             var vue = new Vue({
                 el: '#workingArea',
                 data: data4Vue,
-                mounted:function(){ //mounted　表示这个 Vue 对象加载成功了
+                mounted:function(){
+                    console.log(this)
+                    //mounted　表示这个 Vue 对象加载成功了
                     this.load();
                 },
                 methods: {

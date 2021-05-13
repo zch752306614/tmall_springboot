@@ -7,6 +7,7 @@ import com.ozm.tmall.entity.service.ProductImageService;
 import com.ozm.tmall.entity.service.ProductService;
 import com.ozm.tmall.util.ImageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -55,16 +56,20 @@ public class ProductImageController {
         bean.setProduct(product);
         bean.setType(type);
         productImageService.add(bean);
-
+            String folder="";
         //将图片文件保存在本地
-        String folder = "img/";
-        if (ProductImageService.type_single.equals(bean.getType())){
-                folder = folder + "productSingle";
-        }else{
-                folder = folder + "productDetail";
+        if(type.equals("single")){
+            folder = "D:/img/productSingle/";
+        }else if(type.equals("detail")){
+            folder = "D:/img/productDetail/";
         }
 
-        File  imageFolder= new File(request.getServletContext().getRealPath(folder));
+
+        //本地测试
+        //String path = "D:\\BaiduNetdiskDownload\\tmall_springboot\\tmall_springboot\\src\\main\\resources\\public\\";
+        //File imageFolder= new File(path + folder);
+        File imageFolder= new File(folder);
+
         File file = new File(imageFolder,bean.getId()+".jpg");
         String fileName = file.getName();
         if(!file.getParentFile().exists())
@@ -73,6 +78,7 @@ public class ProductImageController {
             image.transferTo(file);
             BufferedImage img = ImageUtil.change2jpg(file);
             ImageIO.write(img, "jpg", file);
+            System.out.println(file);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -80,6 +86,8 @@ public class ProductImageController {
         if(ProductImageService.type_single.equals(bean.getType())){
             String imageFolder_small= request.getServletContext().getRealPath("img/productSingle_small");
             String imageFolder_middle= request.getServletContext().getRealPath("img/productSingle_middle");
+            //String imageFolder_small= path + "/img/productSingle_small";
+            //String imageFolder_middle= path + "/img/productSingle_middle";
             File f_small = new File(imageFolder_small, fileName);
             File f_middle = new File(imageFolder_middle, fileName);
             f_small.getParentFile().mkdirs();
@@ -97,19 +105,17 @@ public class ProductImageController {
         ProductImage bean = productImageService.get(id);
         productImageService.delete(id);
 
-        String folder = "img/";
-        if(ProductImageService.type_single.equals(bean.getType()))
-            folder +="productSingle";
-        else
-            folder +="productDetail";
+        String folder = "D:/img/productSingle/";
+        File imageFolder= new File(folder);
 
-        File  imageFolder= new File(request.getServletContext().getRealPath(folder));
         File file = new File(imageFolder,bean.getId()+".jpg");
         String fileName = file.getName();
         file.delete();
         if(ProductImageService.type_single.equals(bean.getType())){
             String imageFolder_small= request.getServletContext().getRealPath("img/productSingle_small");
             String imageFolder_middle= request.getServletContext().getRealPath("img/productSingle_middle");
+            //String imageFolder_small= path + "/img/productSingle_small";
+            //String imageFolder_middle= path + "/img/productSingle_middle";
             File f_small = new File(imageFolder_small, fileName);
             File f_middle = new File(imageFolder_middle, fileName);
             f_small.delete();

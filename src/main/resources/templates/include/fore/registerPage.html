@@ -2,7 +2,7 @@
     <script>
         $(function(){
             var data4Vue = {
-                uri:'foreregister',
+                uri:'',
                 result: [],
                 user:{name:'', password:'', repeatpassword:''}
             };
@@ -17,8 +17,14 @@
                     register:function(){
                         var url =  this.uri;
                         if(0==this.user.name.length){
+
                             $("span.errorMessage").html("请输入用户名");
                             $("div.registerErrorMessageDiv").css("visibility","visible");
+                            return;
+                        }
+                        if(this.user.name.length>6){
+                           window.alert("输入的用户名不能大于6个字符！！！")
+                            this.user.name="";
                             return;
                         }
                         if(0==this.user.password.length){
@@ -31,12 +37,18 @@
                             $("div.registerErrorMessageDiv").css("visibility","visible");
                             return;
                         }
+                        if(this.user.repeatpassword.length>16||this.user.password.length>16){
+                            window.alert("输入的密码不能大于16个字符！！！请重新输入");
+                            this.user.password = "";
+                            this.user.repeatpassword = "";
+                            return;
+                        }
                         if(this.user.password !=this.user.repeatpassword){
                             $("span.errorMessage").html("重复密码不一致");
                             $("div.registerErrorMessageDiv").css("visibility","visible");
                             return;
                         }
-
+                        url="/tmall_springboot/foreregister";
                         axios.post(url,this.user).then(function(response) {
                             var result = response.data;
                             if(result.code==0){

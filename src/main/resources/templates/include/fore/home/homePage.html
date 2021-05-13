@@ -4,7 +4,7 @@
         function showProductsAsideCategorys(cid){
             //动态传入cid值 :cid  = v-bind:cid i
             $("div.eachCategory[cid="+cid+"]").css("background-color","white");
-            $("div.eachCategory[cid="+cid+"] a").css("color","#87CEFA");
+            $("div.eachCategory[cid="+cid+"] a").css("color","#fa6142");
             $("div.productsAsideCategorys[cid="+cid+"]").show();
         }
         //移出分类后隐藏推荐列表
@@ -67,7 +67,7 @@
             $("div.productsAsideCategorys div.row a").each(function(){
                 var v = Math.round(Math.random() *6);
                 if(v == 1)
-                    $(this).css("color","#87CEFA");
+                    $(this).css("color","#fa6142");
             });
 
 
@@ -115,7 +115,7 @@
 
     </script>
 
-    <title>天猫官网</title>
+    <title>亿点商城</title>
     <div class="homepageDiv">
         <div th:replace="include/fore/home/categoryAndcarousel/categoryAndcarousel::html" ></div>
         <div th:replace="include/fore/home/homepageCategoryProducts/homepageCategoryProducts::html" ></div>

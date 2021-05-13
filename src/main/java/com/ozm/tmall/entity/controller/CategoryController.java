@@ -55,7 +55,8 @@ public class CategoryController {
     //上传文件，这个有问题 如果上传png他只能保存到缓存当中
     public void saveOrUpdateImageFile(Category bean, MultipartFile image, HttpServletRequest request)
             throws IOException {
-        File imageFolder= new File(request.getServletContext().getRealPath("img/category"));
+        File imageFolder= new File("D:/img/category/");
+        System.out.println(imageFolder.getAbsolutePath());
         File file = new File(imageFolder,bean.getId()+".jpg");
         if(!file.getParentFile().exists())
             file.getParentFile().mkdirs();

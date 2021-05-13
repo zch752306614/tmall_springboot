@@ -121,7 +121,7 @@
                 </tr>
 
                 <tr class="orderItemProductInfoPartTR" v-for="oi,index in o.orderItems" >
-                    <td class="orderItemProductInfoPartTD"><img width="80" height="80" :src="'img/productSingle_middle/'+oi.product.firstProductImage.id+'.jpg'"></td>
+                    <td class="orderItemProductInfoPartTD"><img width="80" height="80" :src="'img/productSingle/'+oi.product.firstProductImage.id+'.jpg'"></td>
                     <td class="orderItemProductInfoPartTD">
                         <div class="orderListItemProductLinkOutDiv">
                             <a :href="'product?pid='+oi.product.id">{{oi.product.name}}</a>

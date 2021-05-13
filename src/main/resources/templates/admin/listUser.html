@@ -25,6 +25,10 @@
                     var url = this.uri+"?start="+start;
                     axios.get(url).then(function (response) {
                         vue.pagination = response.data;
+                        console.log(
+                            vue.pagination.content
+                        )
+
                         vue.beans = vue.pagination.content;
                     })
                 },

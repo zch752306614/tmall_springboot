@@ -9,7 +9,7 @@
         <version>1.5.9.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.ozm</groupId>m
+    <groupId>com.ozm</groupId>
     <artifactId>tmall_springboot</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>tmall_springboot</name>
